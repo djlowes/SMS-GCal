@@ -29,7 +29,7 @@ app.post('/bot', (req, res) => {
     client.messages
       .create({
          body: 'Check out - http://hawaiinot.events',
-         messagingServiceSid: process.env.TWILIO_MESSAGING_SERVICE_SID,
+         from: '+14052966415',
          to: req.body.From
        })
       .then(message => console.log(message.sid))
