@@ -67,7 +67,7 @@ app.post('/bot', (req, res) => {
     client.messages
       .create({
          body: 'Thank you! http://hawaiinot.events is currently being updated.',
-         messagingServiceSid: process.env.TWILIO_MESSAGING_SERVICE_SID,
+         from: '+14052966415',
          to: req.body.From
        })
       .then(message => console.log(message.sid))
@@ -79,7 +79,7 @@ app.post('/bot', (req, res) => {
     client.messages
       .create({
          body: 'The Sheraton Kauai Resort is located here: https://www.google.com/maps/place/Sheraton+Kauai+Resort/@21.8761576,-159.4616121,15z/data=!4m2!3m1!1s0x0:0x72d28967b130e287?sa=X&ved=0ahUKEwi9m637n__bAhVhiFQKHZsgADYQ_BII0QEwCw',
-         messagingServiceSid: process.env.TWILIO_MESSAGING_SERVICE_SID,
+         from:'+14052966415',
          to: req.body.From
        })
       .then(message => console.log(message.sid))
@@ -91,7 +91,7 @@ app.post('/bot', (req, res) => {
       .create({
          url: 'http://demo.twilio.com/docs/voice.xml',
          to: req.body.From,
-         from: '+13012468195'
+         from: '+14052966415'
        })
       .then(call => console.log(call.sid))
       .done();
