@@ -149,7 +149,7 @@ app.post('/bot', (req, res) => {
 
     client.messages
       .create({
-         body: 'Thank you for the question. It has been received and I will respond to you shortly',
+         body: 'Thank you for the question. It has been received and I will respond to you shortly.',
          from: '+14052966415',
          to: req.body.From
        })
