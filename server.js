@@ -119,17 +119,6 @@ app.post('/bot', (req, res) => {
        .done();
   }
 
-  else if (messageResponse[0] !== "what" || messageResponse[0] !== "What" || messageResponse[0] !== "when" || messageResponse[0] !== "When" || messageResponse[0] !== "how" || messageResponse[0] !== "How" || messageResponse[0] !== "Why" || messageResponse[0] !== "why" || messageResponse[0] !== "Who" || messageResponse[0] !== "who" || messageResponse[0] !== "fuck" || messageResponse[0] !== "Fuck" || messageResponse[0] !== "shit" || messageResponse[0] !== "Shit" || messageResponse[0] !== "cunt" || messageResponse[0] !== "Cunt" || messageResponse[0] !== "listen" || messageResponse[0] !== "Listen" || messageResponse[0] !== "address" || messageResponse[0] !== "Address" || messageResponse[0] !== "add" || messageResponse[0] !== "Add" || messageResponse[0] !== "view" || messageResponse[0] !== "View" || messageResponse[0] !== "question" || messageResponse[0] !== "Question") {
-    client.messages
-      .create({
-        body: 'Huh?',
-        from: '+14052966415',
-        to: req.body.From
-       })
-       .then(message => console.log(message.sid))
-       .done();
-  }
-
   else if (messageResponse[0] === "question" || messageResponse[0] === "Question") {
 
     const requestBody = {
@@ -167,6 +156,17 @@ app.post('/bot', (req, res) => {
       .then(message => console.log(message.sid))
       .done();
 
+  }
+
+  else if (messageResponse[0] !== "what" || messageResponse[0] !== "What" || messageResponse[0] !== "when" || messageResponse[0] !== "When" || messageResponse[0] !== "how" || messageResponse[0] !== "How" || messageResponse[0] !== "Why" || messageResponse[0] !== "why" || messageResponse[0] !== "Who" || messageResponse[0] !== "who" || messageResponse[0] !== "fuck" || messageResponse[0] !== "Fuck" || messageResponse[0] !== "shit" || messageResponse[0] !== "Shit" || messageResponse[0] !== "cunt" || messageResponse[0] !== "Cunt" || messageResponse[0] !== "listen" || messageResponse[0] !== "Listen" || messageResponse[0] !== "address" || messageResponse[0] !== "Address" || messageResponse[0] !== "add" || messageResponse[0] !== "Add" || messageResponse[0] !== "view" || messageResponse[0] !== "View" || messageResponse[0] !== "question" || messageResponse[0] !== "Question") {
+    client.messages
+      .create({
+        body: 'Huh?',
+        from: '+14052966415',
+        to: req.body.From
+       })
+       .then(message => console.log(message.sid))
+       .done();
   }
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
